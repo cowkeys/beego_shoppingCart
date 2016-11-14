@@ -16,10 +16,8 @@ func init() {
 	    orm.RegisterDataBase(pname, puser,connectstr)*/
 
 	// Mysql 配置
-	connectstr := beego.AppConfig.String("mysqlconnectstr")
-	orm.RegisterDriver("mysql", orm.DRMySQL)             //注册数据库驱动
-	orm.RegisterDataBase("default", "mysql", connectstr) //注册一个别名为default的数据库*/
-
+	 orm.RegisterDriver("mysql", orm.DRMySQL)                                //注册数据库驱动
+	orm.RegisterDataBase("default", "mysql", "root:@/newdef?charset=utf8") //注册一个别名为default的数据库                                      //设置数据库最大连接数
 	// 自动建表
 	orm.RunSyncdb("default", false, true)
 
