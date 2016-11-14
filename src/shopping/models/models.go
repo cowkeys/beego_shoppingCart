@@ -53,10 +53,7 @@ type Items struct{
 
 
 func init() {
-    // 需要在init中注册定义的model
-    //orm.RegisterModel(new(User))
-  orm.RegisterDriver("mysql", orm.DRMySQL)                                //注册数据库驱动
-	orm.RegisterDataBase("default", "mysql", "root:@/newdef?charset=utf8") //注册一个别名为default的数据库                                      //设置数据库最大连接数
+                                     //设置数据库最大连接数
 	orm.RegisterModel(new(User),new(Product),new(Item),new(Itemnum),new(Order))                        //注册模型并使用表前缀
   //orm.RunCommand()
 }
